@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Profiling Tool</title>
+		<meta charset="utf-8" >
+		<script type="text/javascript" src="lib/d3.v3.js"></script>
+		<script type="text/javascript" src="lib/fps-canvas.js"></script>
+	</head>
+	<body>
+
+	</body>
+	<script type="text/javascript">
+		var chartDiv = document.createElement('div');
+       	chartDiv.id = 'frameTimeChart';
+       	document.body.appendChild(chartDiv);
+       	var chartCanvas = document.createElement('canvas');
+       	chartCanvas.id = 'chartCanvas';
+       	chartDiv.appendChild(chartCanvas);
+
+       	fpscanvas.clearFrameTimeData();
+        fpscanvas.createFrameTimeChart();
+        fpscanvas.installIntervalTimer();
+		FPSMeter.run(1.0/100);
+	</script>
+</html>
